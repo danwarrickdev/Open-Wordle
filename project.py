@@ -1,10 +1,11 @@
 import random
-from colorama import Fore, Back, Style
+from colorama import Style
 import sys
 from os import name, system
 
 
 def main():
+    clear_screen()
     # Get word from array with random.choice
     answer = random.choice(["hello", "world"])
     tries = 5
@@ -29,10 +30,10 @@ def main():
         # Check guess
         guesses.append(i)
 
+        # Increment moves / Handle Win/Loss
         if i == answer:
             print("Success! :D")
             sys.exit()
-        # Handle Loss
         elif tries == 0:
             print("Fail :(")
             print(f"The answer was {answer}")
@@ -41,17 +42,18 @@ def main():
             tries -= 1
             clear_screen()
 
-        # Print board
+        # Update board
         for num in range(5):
             if num < len(guesses):
                 output_guess_row(guesses[num], answer)
             else:
                 output_empty_row()
+
+        for letter in i:
+            letter_bank[letter]["is_guessed"] = True
         output_letter_bank(letter_bank)
         print(f"{tries} tries remaining...")
 
-    # Increment moves / Handle Win/Loss
-    # Update board
     # Update letter bank
     # On Win -> update stats, congrat message
     # On Lose -> update stats, loss message
@@ -121,7 +123,7 @@ def output_letter_bank(letter_bank):
         if letter_bank[i]["is_guessed"]:
             print(Style.DIM + i.capitalize() + "\u0336", end="  ")
         else:
-            print(i.capitalize(), end="  ")
+            print(Style.RESET_ALL + i.capitalize(), end="  ")
         if (index + 1) % 10 == 0:
             print()
         index += 1
