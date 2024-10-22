@@ -3,7 +3,7 @@ import random
 
 def main():
     # Get word from array with random.choice
-    answer = random.choice(["hello", "world"])
+    answer = random.choice(["HELLO", "WORLD"])
     # Print board
     for _ in range(5):
         output_row(answer)
@@ -20,25 +20,29 @@ def main():
 
 
 def output_row(word="?????"):
-    output = ["", "", "", "", ""]
+    output = [
+        "",
+        "",
+        "",
+    ]
 
     for letter in word:
         box = get_letter_box(letter)
-        for i in range(5):
+        for i in range(3):
             output[i] += box[i]
 
     for i in output:
         print(i)
+    print()
 
 
-def get_letter_box(s):
-    return [
-        " ***** ",
-        "|     |",
-        f"|  {s}  |",
-        "|     |",
-        " ***** ",
-    ]
+def get_letter_box(s, color="white"):
+    if color == "green":
+        return ["🟩🟩🟩 ", f"🟩{s} 🟩 ", "🟩🟩🟩 "]
+    elif color == "yellow":
+        return ["🟨🟨🟨 ", f"🟨{s} 🟨 ", "🟨🟨🟨 "]
+    else:
+        return ["⬜⬜⬜ ", f"⬜{s} ⬜ ", "⬜⬜⬜ "]
 
 
 def function_1(): ...
