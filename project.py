@@ -5,11 +5,8 @@ def main():
     # Get word from array with random.choice
     answer = random.choice(["hello", "world"])
     # Print board
-    output_row(answer)
-    output_row(answer)
-    output_row(answer)
-    output_row(answer)
-    output_row(answer)
+    for _ in range(5):
+        output_row(answer)
 
     # Print letter bank
     # Get user input
@@ -22,24 +19,16 @@ def main():
     # On Lose -> update stats, loss message
 
 
-def output_row(w="?????"):
-    row_0 = ""
-    row_1 = ""
-    row_2 = ""
-    row_3 = ""
-    row_4 = ""
-    for l in w:
-        box = get_letter_box(l)
-        row_0 += box[0]
-        row_1 += box[1]
-        row_2 += box[2]
-        row_3 += box[3]
-        row_4 += box[4]
-    print(row_0)
-    print(row_1)
-    print(row_2)
-    print(row_3)
-    print(row_4)
+def output_row(word="?????"):
+    output = ["", "", "", "", ""]
+
+    for letter in word:
+        box = get_letter_box(letter)
+        for i in range(5):
+            output[i] += box[i]
+
+    for i in output:
+        print(i)
 
 
 def get_letter_box(s):
