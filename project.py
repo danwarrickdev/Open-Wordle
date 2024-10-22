@@ -2,14 +2,13 @@ import random
 from colorama import Style
 import sys
 from os import name, system
+from letter_box import LetterBox
+from game import Game
 
 
 def main():
-    clear_screen()
-    # Get word from array with random.choice
-    answer = random.choice(["hello", "world"])
-    tries = 5
-    guesses = []
+    g = Game()
+    g.clear_screen()
 
     # Print board
     for _ in range(5):
@@ -28,31 +27,22 @@ def main():
 
         # Validate user input
         # Check guess
-        guesses.append(i)
+        g.guess(i)
 
         # Increment moves / Handle Win/Loss
-        if i == answer:
-            print("Success! :D")
-            sys.exit()
-        elif tries == 0:
-            print("Fail :(")
-            print(f"The answer was {answer}")
-            sys.exit()
-        else:
-            tries -= 1
-            clear_screen()
+        g.check_win_loss_continue()
 
         # Update board
         for num in range(5):
-            if num < len(guesses):
-                output_guess_row(guesses[num], answer)
+            if num < len(g.guesses):
+                output_guess_row(g.guesses[num], g.answer)
             else:
                 output_empty_row()
 
         for letter in i:
             letter_bank[letter]["is_guessed"] = True
         output_letter_bank(letter_bank)
-        print(f"{tries} tries remaining...")
+        print(f"{g.tries} tries remaining...")
 
     # Update letter bank
     # On Win -> update stats, congrat message
@@ -66,17 +56,14 @@ def output_guess_row(guess, answer):
         "",
     ]
 
-    index = 0
-    for letter in guess:
-        color = "white"
-        if letter in answer:
-            color = "yellow"
-            if guess[index] == answer[index]:
-                color = "green"
-        box = get_letter_box(letter, color)
+    letter_boxes = [LetterBox(i, guess[i]) for i in range(len(guess))]
+    print(letter_boxes)
+    for b in letter_boxes:
+        color = b.get_color(guess, answer)
+        box = b.__str__(color)
+
         for i in range(3):
             output[i] += box[i]
-        index += 1
 
     for i in output:
         print(i)
@@ -91,22 +78,15 @@ def output_empty_row():
     ]
 
     for _ in range(5):
-        box = get_letter_box("?")
+        b = LetterBox(-1, "?")
+        box = b.__str__("white")
+
         for i in range(3):
             output[i] += box[i]
 
     for i in output:
         print(i)
     print()
-
-
-def get_letter_box(s, color="white"):
-    if color == "green":
-        return ["🟩🟩🟩 ", f"🟩{s.capitalize()} 🟩 ", "🟩🟩🟩 "]
-    elif color == "yellow":
-        return ["🟨🟨🟨 ", f"🟨{s.capitalize()} 🟨 ", "🟨🟨🟨 "]
-    else:
-        return ["⬜⬜⬜ ", f"⬜{s.capitalize()} ⬜ ", "⬜⬜⬜ "]
 
 
 def init_letter_bank():
@@ -128,16 +108,6 @@ def output_letter_bank(letter_bank):
             print()
         index += 1
     print()
-
-
-def clear_screen():
-    # windows clear terminal
-    if name == "nt":
-        system("cls")
-
-    # mac/linux
-    else:
-        system("clear")
 
 
 def function_1(): ...
