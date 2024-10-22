@@ -1,4 +1,5 @@
 import random
+from colorama import Fore, Back, Style
 
 
 def main():
@@ -7,6 +8,18 @@ def main():
     # Print board
     for _ in range(5):
         output_row(answer)
+
+    letter_bank = init_letter_bank()
+
+    index = 0
+    for i in letter_bank:
+        if letter_bank[i]["is_guessed"]:
+            print(Style.DIM + i.capitalize() + "\u0336", end="  ")
+        else:
+            print(i.capitalize(), end="  ")
+        if (index + 1) % 10 == 0:
+            print()
+        index += 1
 
     # Print letter bank
     # Get user input
@@ -43,6 +56,14 @@ def get_letter_box(s, color="white"):
         return ["🟨🟨🟨 ", f"🟨{s} 🟨 ", "🟨🟨🟨 "]
     else:
         return ["⬜⬜⬜ ", f"⬜{s} ⬜ ", "⬜⬜⬜ "]
+
+
+def init_letter_bank():
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    return {
+        letter: {"is_guessed": False, "is_correct": False, "is_hint": False}
+        for letter in alphabet
+    }
 
 
 def function_1(): ...
