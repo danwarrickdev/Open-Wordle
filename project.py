@@ -15,11 +15,15 @@ def main():
     # Get user input
     while True:
         # Get guess
-        i = input("Guess:").lower()
+        i = input("Guess: ").lower()
         if i == "quit":
             sys.exit()
 
         # Validate user input
+        if g.validate_guess(i) == False:
+            print("Invalid Input")
+            continue
+        
         # Check guess
         g.guess(i)
 
@@ -36,18 +40,6 @@ def main():
         g.print_letter_bank()
 
         print(f"{g.tries} tries remaining...")
-
-
-
-
-
-def function_1(): ...
-
-
-def function_2(): ...
-
-
-def function_n(): ...
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@ import random
 import sys
 from letter_box import LetterBox
 from colorama import Style, Fore
+import re
 
 MAX_TRIES = 6
 WORD_LENGTH = 5
@@ -44,7 +45,7 @@ class Game:
     def check_win_loss_continue(self):
         last_guess = self._guesses[-1]
         if last_guess == self._answer:
-            # self.clear_screen()
+            self.clear_screen()
             self.print_board()
             print("Success! :D")
             print(f"You solved it in {MAX_TRIES - self._tries + 1} tries!")
@@ -55,7 +56,7 @@ class Game:
             sys.exit()
         else:
             self.decrement_tries()
-            # self.clear_screen()
+            self.clear_screen()
 
     def clear_screen(self):
         # windows clear terminal
@@ -127,3 +128,13 @@ class Game:
                 print()
             index += 1
         print()
+
+    def validate_guess(self, guess):
+        g = guess.strip().lower()
+        try:
+            if re.search(r"^[a-zA-Z]{5}", g):
+                return True
+            else:
+                return False
+        except ValueError:
+            return False
