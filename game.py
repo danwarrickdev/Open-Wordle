@@ -1,6 +1,5 @@
 from os import name, system
 import random
-import sys
 from letter_box import LetterBox
 from colorama import Style, Fore
 import re
@@ -179,3 +178,9 @@ class Game:
         with open("data/stats.json", "w", encoding="utf-8") as file:
             json.dump(stats, file, indent=4)
             file.close()
+
+    @classmethod
+    def get_stats(self):
+        with open("data/stats.json") as file:
+            d = json.load(file)
+            return d

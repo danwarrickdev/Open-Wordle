@@ -49,6 +49,7 @@ def game_loop():
         if i.lower() == "y":
             break
         elif i.lower() == "n":
+            Game.clear_screen()
             sys.exit()
         else:
             print("Invalid input")
@@ -80,7 +81,49 @@ def menu_loop():
 
 
 def print_stats():
-    print("hello")
+    Game.clear_screen()
+    stats = Game.get_stats()
+    total_plays = stats["wins"] + stats["losses"]
+    win_percent = stats["wins"] / total_plays
+    print(
+        f""" 
+            +-+-+-+-+-+-+-+-+-+-+
+            |S|t|a|t|i|s|t|i|c|s
+            +-+-+-+-+-+-+-+-+-+-+
+        
+            Played: {total_plays}
+            Win Percent: {win_percent:.2f}%
+            Current Streak: {stats["streak"]}
+            Max Streak: {stats["max_streak"]}
+        """
+    )
+    print(
+        f""" 
+            +-+-+-+-+-+-+-+-+-+-+-+-+
+            |D|i|s|t|r|i|b|u|t|i|o|n
+            +-+-+-+-+-+-+-+-+-+-+-+-+
+        """
+    )
+    dist = stats["distribution"]
+    for i in dist:
+        s = ""
+        percent = round(dist[i] / stats["wins"] * 100)
+        for j in range(percent):
+            if j % 10 == 0:
+                s += "🟩"
+        s += f" {dist[i]} ({percent}%)"
+        print(
+            f"""            {i} : {s}""",
+        )
+    while True:
+        i = input("\nBack to menu (y/n)? ")
+        if i.lower() == "y":
+            break
+        elif i.lower() == "n":
+            Game.clear_screen()
+            sys.exit()
+        else:
+            print("Invalid input")
 
 
 def main():
