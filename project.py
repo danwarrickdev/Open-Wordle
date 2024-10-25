@@ -14,6 +14,7 @@ def main():
 
     # Get user input
     while True:
+        
         # Get guess
         i = input("Guess: ").lower()
         if i == "quit":
