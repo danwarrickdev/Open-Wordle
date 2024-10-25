@@ -4,15 +4,17 @@ import sys
 from letter_box import LetterBox
 from colorama import Style, Fore
 import re
+import json
 
 MAX_TRIES = 6
 WORD_LENGTH = 5
+
 
 class Game:
     def __init__(self) -> None:
         self._tries = MAX_TRIES
         self._guesses = []
-        self._answer = random.choice(["hello", "world"])
+        self._answer = self.get_answer()
 
         alphabet = "abcdefghijklmnopqrstuvwxyz"
         self._letter_bank = {
@@ -138,3 +140,13 @@ class Game:
                 return False
         except ValueError:
             return False
+
+    def get_answer(self):
+        with open("data/words.json") as file:
+            d = json.load(file)
+            filtered = []
+            for word in d:
+                if not d[word]["is_used"]:
+                    filtered.append(word)
+            file.close()
+            return random.choice(filtered)

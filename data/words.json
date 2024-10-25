@@ -1,0 +1,818 @@
+{
+    "aback": {
+        "is_used": false
+    },
+    "abets": {
+        "is_used": false
+    },
+    "abhor": {
+        "is_used": false
+    },
+    "abide": {
+        "is_used": false
+    },
+    "abort": {
+        "is_used": false
+    },
+    "about": {
+        "is_used": false
+    },
+    "above": {
+        "is_used": false
+    },
+    "accel": {
+        "is_used": false
+    },
+    "acids": {
+        "is_used": false
+    },
+    "acorn": {
+        "is_used": false
+    },
+    "acted": {
+        "is_used": false
+    },
+    "adage": {
+        "is_used": false
+    },
+    "added": {
+        "is_used": false
+    },
+    "adieu": {
+        "is_used": false
+    },
+    "adobe": {
+        "is_used": false
+    },
+    "adopt": {
+        "is_used": false
+    },
+    "adorn": {
+        "is_used": false
+    },
+    "adult": {
+        "is_used": false
+    },
+    "aeons": {
+        "is_used": false
+    },
+    "afoot": {
+        "is_used": false
+    },
+    "afoul": {
+        "is_used": false
+    },
+    "after": {
+        "is_used": false
+    },
+    "again": {
+        "is_used": false
+    },
+    "agent": {
+        "is_used": false
+    },
+    "agile": {
+        "is_used": false
+    },
+    "aging": {
+        "is_used": false
+    },
+    "agree": {
+        "is_used": false
+    },
+    "ahead": {
+        "is_used": false
+    },
+    "aided": {
+        "is_used": false
+    },
+    "aimed": {
+        "is_used": false
+    },
+    "aisle": {
+        "is_used": false
+    },
+    "alarm": {
+        "is_used": false
+    },
+    "album": {
+        "is_used": false
+    },
+    "alert": {
+        "is_used": false
+    },
+    "algae": {
+        "is_used": false
+    },
+    "alias": {
+        "is_used": false
+    },
+    "alibi": {
+        "is_used": false
+    },
+    "alien": {
+        "is_used": false
+    },
+    "align": {
+        "is_used": false
+    },
+    "alike": {
+        "is_used": false
+    },
+    "alive": {
+        "is_used": false
+    },
+    "alloy": {
+        "is_used": false
+    },
+    "allot": {
+        "is_used": false
+    },
+    "allow": {
+        "is_used": false
+    },
+    "aloft": {
+        "is_used": false
+    },
+    "alone": {
+        "is_used": false
+    },
+    "along": {
+        "is_used": false
+    },
+    "aloof": {
+        "is_used": false
+    },
+    "altar": {
+        "is_used": false
+    },
+    "alter": {
+        "is_used": false
+    },
+    "amass": {
+        "is_used": false
+    },
+    "amaze": {
+        "is_used": false
+    },
+    "among": {
+        "is_used": false
+    },
+    "anger": {
+        "is_used": false
+    },
+    "angry": {
+        "is_used": false
+    },
+    "angst": {
+        "is_used": false
+    },
+    "anime": {
+        "is_used": false
+    },
+    "ankle": {
+        "is_used": false
+    },
+    "annal": {
+        "is_used": false
+    },
+    "annex": {
+        "is_used": false
+    },
+    "annoy": {
+        "is_used": false
+    },
+    "anvil": {
+        "is_used": false
+    },
+    "aorta": {
+        "is_used": false
+    },
+    "apart": {
+        "is_used": false
+    },
+    "aphid": {
+        "is_used": false
+    },
+    "apply": {
+        "is_used": false
+    },
+    "apron": {
+        "is_used": false
+    },
+    "aptly": {
+        "is_used": false
+    },
+    "arbor": {
+        "is_used": false
+    },
+    "argon": {
+        "is_used": false
+    },
+    "arise": {
+        "is_used": false
+    },
+    "armor": {
+        "is_used": false
+    },
+    "arrow": {
+        "is_used": false
+    },
+    "arson": {
+        "is_used": false
+    },
+    "artsy": {
+        "is_used": false
+    },
+    "asked": {
+        "is_used": false
+    },
+    "atone": {
+        "is_used": false
+    },
+    "atune": {
+        "is_used": false
+    },
+    "audio": {
+        "is_used": false
+    },
+    "audit": {
+        "is_used": false
+    },
+    "aunts": {
+        "is_used": false
+    },
+    "autos": {
+        "is_used": false
+    },
+    "avail": {
+        "is_used": false
+    },
+    "avast": {
+        "is_used": false
+    },
+    "avert": {
+        "is_used": false
+    },
+    "avian": {
+        "is_used": false
+    },
+    "avoid": {
+        "is_used": false
+    },
+    "avows": {
+        "is_used": false
+    },
+    "await": {
+        "is_used": false
+    },
+    "awake": {
+        "is_used": false
+    },
+    "award": {
+        "is_used": false
+    },
+    "awful": {
+        "is_used": false
+    },
+    "awoke": {
+        "is_used": false
+    },
+    "axils": {
+        "is_used": false
+    },
+    "axiom": {
+        "is_used": false
+    },
+    "badge": {
+        "is_used": false
+    },
+    "bagel": {
+        "is_used": false
+    },
+    "baggy": {
+        "is_used": false
+    },
+    "bails": {
+        "is_used": false
+    },
+    "baked": {
+        "is_used": false
+    },
+    "bales": {
+        "is_used": false
+    },
+    "balls": {
+        "is_used": false
+    },
+    "bards": {
+        "is_used": false
+    },
+    "barks": {
+        "is_used": false
+    },
+    "basin": {
+        "is_used": false
+    },
+    "basis": {
+        "is_used": false
+    },
+    "batch": {
+        "is_used": false
+    },
+    "bathe": {
+        "is_used": false
+    },
+    "baths": {
+        "is_used": false
+    },
+    "bawdy": {
+        "is_used": false
+    },
+    "beams": {
+        "is_used": false
+    },
+    "beans": {
+        "is_used": false
+    },
+    "beast": {
+        "is_used": false
+    },
+    "beats": {
+        "is_used": false
+    },
+    "befit": {
+        "is_used": false
+    },
+    "begun": {
+        "is_used": false
+    },
+    "beige": {
+        "is_used": false
+    },
+    "belch": {
+        "is_used": false
+    },
+    "biker": {
+        "is_used": false
+    },
+    "bikes": {
+        "is_used": false
+    },
+    "bilge": {
+        "is_used": false
+    },
+    "bingo": {
+        "is_used": false
+    },
+    "biome": {
+        "is_used": false
+    },
+    "biped": {
+        "is_used": false
+    },
+    "birth": {
+        "is_used": false
+    },
+    "bites": {
+        "is_used": false
+    },
+    "blade": {
+        "is_used": false
+    },
+    "bleed": {
+        "is_used": false
+    },
+    "bleep": {
+        "is_used": false
+    },
+    "blend": {
+        "is_used": false
+    },
+    "bless": {
+        "is_used": false
+    },
+    "blind": {
+        "is_used": false
+    },
+    "bloat": {
+        "is_used": false
+    },
+    "blond": {
+        "is_used": false
+    },
+    "bloop": {
+        "is_used": false
+    },
+    "bluff": {
+        "is_used": false
+    },
+    "blurb": {
+        "is_used": false
+    },
+    "blurs": {
+        "is_used": false
+    },
+    "blurt": {
+        "is_used": false
+    },
+    "blush": {
+        "is_used": false
+    },
+    "board": {
+        "is_used": false
+    },
+    "boast": {
+        "is_used": false
+    },
+    "boats": {
+        "is_used": false
+    },
+    "boils": {
+        "is_used": false
+    },
+    "bombs": {
+        "is_used": false
+    },
+    "bones": {
+        "is_used": false
+    },
+    "booty": {
+        "is_used": false
+    },
+    "bored": {
+        "is_used": false
+    },
+    "bosom": {
+        "is_used": false
+    },
+    "bowel": {
+        "is_used": false
+    },
+    "bowls": {
+        "is_used": false
+    },
+    "boxes": {
+        "is_used": false
+    },
+    "braid": {
+        "is_used": false
+    },
+    "brain": {
+        "is_used": false
+    },
+    "brake": {
+        "is_used": false
+    },
+    "brave": {
+        "is_used": false
+    },
+    "bravo": {
+        "is_used": false
+    },
+    "brawl": {
+        "is_used": false
+    },
+    "brawn": {
+        "is_used": false
+    },
+    "bread": {
+        "is_used": false
+    },
+    "break": {
+        "is_used": false
+    },
+    "briar": {
+        "is_used": false
+    },
+    "bribe": {
+        "is_used": false
+    },
+    "brisk": {
+        "is_used": false
+    },
+    "broil": {
+        "is_used": false
+    },
+    "broke": {
+        "is_used": false
+    },
+    "broom": {
+        "is_used": false
+    },
+    "brute": {
+        "is_used": false
+    },
+    "build": {
+        "is_used": false
+    },
+    "built": {
+        "is_used": false
+    },
+    "bulky": {
+        "is_used": false
+    },
+    "bumps": {
+        "is_used": false
+    },
+    "burly": {
+        "is_used": false
+    },
+    "burnt": {
+        "is_used": false
+    },
+    "burst": {
+        "is_used": false
+    },
+    "buxom": {
+        "is_used": false
+    },
+    "cabin": {
+        "is_used": false
+    },
+    "caddy": {
+        "is_used": false
+    },
+    "cafes": {
+        "is_used": false
+    },
+    "caged": {
+        "is_used": false
+    },
+    "cagey": {
+        "is_used": false
+    },
+    "cages": {
+        "is_used": false
+    },
+    "caked": {
+        "is_used": false
+    },
+    "cakes": {
+        "is_used": false
+    },
+    "calms": {
+        "is_used": false
+    },
+    "camps": {
+        "is_used": false
+    },
+    "canal": {
+        "is_used": false
+    },
+    "canoe": {
+        "is_used": false
+    },
+    "caper": {
+        "is_used": false
+    },
+    "capes": {
+        "is_used": false
+    },
+    "carat": {
+        "is_used": false
+    },
+    "cards": {
+        "is_used": false
+    },
+    "cared": {
+        "is_used": false
+    },
+    "cares": {
+        "is_used": false
+    },
+    "cases": {
+        "is_used": false
+    },
+    "casks": {
+        "is_used": false
+    },
+    "cater": {
+        "is_used": false
+    },
+    "caulk": {
+        "is_used": false
+    },
+    "ceded": {
+        "is_used": false
+    },
+    "cents": {
+        "is_used": false
+    },
+    "chalk": {
+        "is_used": false
+    },
+    "chant": {
+        "is_used": false
+    },
+    "chaos": {
+        "is_used": false
+    },
+    "charm": {
+        "is_used": false
+    },
+    "cheap": {
+        "is_used": false
+    },
+    "cheat": {
+        "is_used": false
+    },
+    "check": {
+        "is_used": false
+    },
+    "cheek": {
+        "is_used": false
+    },
+    "cheer": {
+        "is_used": false
+    },
+    "chess": {
+        "is_used": false
+    },
+    "chewy": {
+        "is_used": false
+    },
+    "chili": {
+        "is_used": false
+    },
+    "chime": {
+        "is_used": false
+    },
+    "chimp": {
+        "is_used": false
+    },
+    "choir": {
+        "is_used": false
+    },
+    "choke": {
+        "is_used": false
+    },
+    "chomp": {
+        "is_used": false
+    },
+    "chord": {
+        "is_used": false
+    },
+    "chore": {
+        "is_used": false
+    },
+    "chump": {
+        "is_used": false
+    },
+    "cycle": {
+        "is_used": false
+    },
+    "cider": {
+        "is_used": false
+    },
+    "cited": {
+        "is_used": false
+    },
+    "civic": {
+        "is_used": false
+    },
+    "claim": {
+        "is_used": false
+    },
+    "clash": {
+        "is_used": false
+    },
+    "clear": {
+        "is_used": false
+    },
+    "climb": {
+        "is_used": false
+    },
+    "clone": {
+        "is_used": false
+    },
+    "cloth": {
+        "is_used": false
+    },
+    "clown": {
+        "is_used": false
+    },
+    "comet": {
+        "is_used": false
+    },
+    "comfy": {
+        "is_used": false
+    },
+    "comic": {
+        "is_used": false
+    },
+    "comma": {
+        "is_used": false
+    },
+    "cones": {
+        "is_used": false
+    },
+    "couch": {
+        "is_used": false
+    },
+    "cough": {
+        "is_used": false
+    },
+    "could": {
+        "is_used": false
+    },
+    "coupe": {
+        "is_used": false
+    },
+    "coven": {
+        "is_used": false
+    },
+    "cover": {
+        "is_used": false
+    },
+    "covet": {
+        "is_used": false
+    },
+    "crack": {
+        "is_used": false
+    },
+    "craft": {
+        "is_used": false
+    },
+    "cramp": {
+        "is_used": false
+    },
+    "crank": {
+        "is_used": false
+    },
+    "crash": {
+        "is_used": false
+    },
+    "crass": {
+        "is_used": false
+    },
+    "crate": {
+        "is_used": false
+    },
+    "crave": {
+        "is_used": false
+    },
+    "crawl": {
+        "is_used": false
+    },
+    "craze": {
+        "is_used": false
+    },
+    "crazy": {
+        "is_used": false
+    },
+    "cream": {
+        "is_used": false
+    },
+    "creed": {
+        "is_used": false
+    },
+    "creep": {
+        "is_used": false
+    },
+    "crest": {
+        "is_used": false
+    },
+    "crime": {
+        "is_used": false
+    },
+    "crimp": {
+        "is_used": false
+    },
+    "crone": {
+        "is_used": false
+    },
+    "crony": {
+        "is_used": false
+    },
+    "crowd": {
+        "is_used": false
+    },
+    "cruel": {
+        "is_used": false
+    },
+    "crumb": {
+        "is_used": false
+    },
+    "crush": {
+        "is_used": false
+    },
+    "cubic": {
+        "is_used": false
+    },
+    "cured": {
+        "is_used": false
+    },
+    "curly": {
+        "is_used": false
+    },
+    "curls": {
+        "is_used": false
+    },
+    "curve": {
+        "is_used": false
+    },
+    "curvy": {
+        "is_used": false
+    }
+}
