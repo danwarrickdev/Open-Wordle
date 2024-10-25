@@ -51,10 +51,12 @@ class Game:
             self.print_board()
             print("Success! :D")
             print(f"You solved it in {MAX_TRIES - self._tries + 1} tries!")
+            self.update_stats(True)
             sys.exit()
         elif self._tries == 0:
             print("Fail :(")
             print(f"The answer was {self._answer}")
+            self.update_stats(False)
             sys.exit()
         else:
             self.decrement_tries()
@@ -150,3 +152,27 @@ class Game:
                     filtered.append(word)
             file.close()
             return random.choice(filtered)
+
+    def update_stats(self, win):
+        with open("data/stats.json") as file:
+            d = json.load(file)
+            file.close()
+        stats = {**d}
+
+        if win:
+            stats["wins"] += 1
+        else:
+            stats["losses"] += 1
+        stats["streak"] += 1
+
+        if stats["streak"] > stats["max_streak"]:
+            stats["max_streak"] += 1
+
+        distribution_idx = MAX_TRIES - self._tries + 1
+        distribution = d["distribution"]
+        distribution[str(distribution_idx)] += 1
+        stats["distribution"] = distribution
+
+        with open("data/stats.json", "w", encoding="utf-8") as file:
+            json.dump(stats, file, indent=4)
+            file.close()
