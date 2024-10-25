@@ -174,9 +174,10 @@ class Game:
 
         if win:
             stats["wins"] += 1
+            stats["streak"] += 1
         else:
             stats["losses"] += 1
-        stats["streak"] += 1
+            stats["streak"] = 0
 
         if stats["streak"] > stats["max_streak"]:
             stats["max_streak"] += 1

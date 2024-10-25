@@ -68,7 +68,7 @@ def menu_loop():
             |O|p|e|n| |W|o|r|d|l|e| |v|1|.|0|
             +-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
             
-            1 - Daily Game
+            1 - New Puzzle
             2 - View Stats
             3 - Quit
             """
@@ -97,8 +97,8 @@ def print_stats():
         
             Played: {total_plays}
             Win Percent: {win_percent:.2f}%
-            Current Streak: {stats["streak"]}
-            Max Streak: {stats["max_streak"]}
+            Current Win Streak: {stats["streak"]}
+            Longest Win Streak: {stats["max_streak"]}
         """
     )
     print(
