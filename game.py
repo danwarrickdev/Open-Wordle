@@ -14,6 +14,7 @@ class Game:
         self._tries = MAX_TRIES
         self._guesses = []
         self._answer = self.get_answer()
+        self._all_words = self.get_all_possible_words()
 
         alphabet = "abcdefghijklmnopqrstuvwxyz"
         self._letter_bank = {
@@ -145,6 +146,9 @@ class Game:
         except ValueError:
             return False
 
+    def validate_is_word(self, guess):
+        return guess in self._all_words
+
     def get_answer(self):
         with open("data/words.json") as file:
             d = json.load(file)
@@ -154,6 +158,13 @@ class Game:
                     filtered.append(word)
             file.close()
             return random.choice(filtered)
+
+    def get_all_possible_words(self):
+        arr = []
+        with open("data/dictionary.txt", "r") as file:
+            for line in file:
+                arr.append(line.strip())
+        return arr
 
     def update_stats(self, win):
         with open("data/stats.json") as file:

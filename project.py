@@ -25,6 +25,10 @@ def game_loop():
             print("Invalid Input")
             continue
 
+        if g.validate_is_word(i) == False:
+            print("Word not found")
+            continue
+
         # Check guess
         g.guess(i)
 
@@ -84,7 +88,7 @@ def print_stats():
     Game.clear_screen()
     stats = Game.get_stats()
     total_plays = stats["wins"] + stats["losses"]
-    win_percent = stats["wins"] / total_plays
+    win_percent = stats["wins"] / total_plays * 100
     print(
         f""" 
             +-+-+-+-+-+-+-+-+-+-+
