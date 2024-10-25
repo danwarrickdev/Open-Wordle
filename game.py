@@ -44,6 +44,7 @@ class Game:
     def guess(self, g):
         self._guesses.append(g)
 
+    # returns should_exit
     def check_win_loss_continue(self):
         last_guess = self._guesses[-1]
         if last_guess == self._answer:
@@ -52,16 +53,18 @@ class Game:
             print("Success! :D")
             print(f"You solved it in {MAX_TRIES - self._tries + 1} tries!")
             self.update_stats(True)
-            sys.exit()
-        elif self._tries == 0:
+            return True
+        elif self._tries == 1:
             print("Fail :(")
             print(f"The answer was {self._answer}")
             self.update_stats(False)
-            sys.exit()
+            return True
         else:
             self.decrement_tries()
             self.clear_screen()
+            return False
 
+    @classmethod
     def clear_screen(self):
         # windows clear terminal
         if name == "nt":
