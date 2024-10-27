@@ -68,15 +68,7 @@ class Stats:
             print(
                 f"{i} : {s}",
             )
-        while True:
-            i = input("\nBack to menu (y/n)? ")
-            if i.lower() == "y":
-                break
-            elif i.lower() == "n":
-                helpers.clear_screen
-                sys.exit()
-            else:
-                print("Invalid input")
+        helpers.back_to_menu_loop()
 
     @classmethod
     def update_stats(self, win, tries):

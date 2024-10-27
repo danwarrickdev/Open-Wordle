@@ -49,15 +49,7 @@ def game_loop():
 
         print(f"{g.tries} tries remaining...")
 
-    while True:
-        i = input("Back to menu (y/n)? ")
-        if i.lower() == "y":
-            break
-        elif i.lower() == "n":
-            helpers.clear_screen()
-            sys.exit()
-        else:
-            print("Invalid input")
+    helpers.back_to_menu_loop()
 
 
 def menu_loop():

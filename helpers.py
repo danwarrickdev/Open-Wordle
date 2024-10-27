@@ -1,5 +1,6 @@
 from os import name, system
 import json
+import sys
 
 def clear_screen():
     # windows clear terminal
@@ -48,3 +49,13 @@ def print_header(s: str):
     output += f"{top}\n{mid}\n{bottom}\n"
     print(output)
             
+def back_to_menu_loop():
+    while True:
+        i = input("\nBack to menu (y/n)? ")
+        if i.lower() == "y":
+            break
+        elif i.lower() == "n":
+            clear_screen()
+            sys.exit()
+        else:
+            print("Invalid input")
