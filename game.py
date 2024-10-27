@@ -1,9 +1,9 @@
-from os import name, system
 import random
 from letter_box import LetterBox
 from colorama import Style, Fore
 import re
 import json
+import helpers
 
 MAX_TRIES = 6
 WORD_LENGTH = 5
@@ -11,12 +11,21 @@ WORD_LENGTH = 5
 
 class Game:
     def __init__(self) -> None:
+        # number of times to execute game loop
         self._tries = MAX_TRIES
+        
+        # past guesses for display purposes
         self._guesses = []
+        
+        # the word the user is trying to guess
         self._answer = self.get_answer()
+        
+        # a list of 400k words to validate guesses are actual words
         self._all_words = self.get_all_possible_words()
 
         alphabet = "abcdefghijklmnopqrstuvwxyz"
+        
+        # used to display letters guessed
         self._letter_bank = {
             letter: {"is_guessed": False, "is_correct": False, "is_hint": False}
             for letter in alphabet
@@ -48,7 +57,7 @@ class Game:
     def check_win_loss_continue(self):
         last_guess = self._guesses[-1]
         if last_guess == self._answer:
-            self.clear_screen()
+            helpers.clear_screen()
             self.print_board()
             print("Success! :D")
             print(f"You solved it in {MAX_TRIES - self._tries + 1} tries!")
@@ -61,18 +70,9 @@ class Game:
             return True
         else:
             self.decrement_tries()
-            self.clear_screen()
+            helpers.clear_screen()
             return False
 
-    @classmethod
-    def clear_screen(self):
-        # windows clear terminal
-        if name == "nt":
-            system("cls")
-
-        # mac/linux
-        else:
-            system("clear")
 
     def print_row(self, guess=""):
         output = ["" for _ in range(3)]
@@ -159,7 +159,13 @@ class Game:
                 if not d[word]["is_used"]:
                     filtered.append(word)
             file.close()
-            return random.choice(filtered)
+        answer = random.choice(filtered)
+        new_words = {**d, [answer]: {"is_used": True}}
+        
+        with open("data/words.json", "w", encoding="utf-8") as file:
+            json.dump(new_words, file, indent=4)
+            file.close()
+        return answer
 
     def get_all_possible_words(self):
         arr = []
@@ -192,9 +198,7 @@ class Game:
         with open("data/stats.json", "w", encoding="utf-8") as file:
             json.dump(stats, file, indent=4)
             file.close()
+            
 
-    @classmethod
-    def get_stats(self):
-        with open("data/stats.json") as file:
-            d = json.load(file)
-            return d
+        
+    

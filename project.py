@@ -1,10 +1,11 @@
 import sys
 from game import Game
-
+import helpers
+from stats import Stats
 
 def game_loop():
     g = Game()
-    g.clear_screen()
+    helpers.clear_screen()
 
     # Print board
     g.print_board()
@@ -53,7 +54,7 @@ def game_loop():
         if i.lower() == "y":
             break
         elif i.lower() == "n":
-            Game.clear_screen()
+            helpers.clear_screen()
             sys.exit()
         else:
             print("Invalid input")
@@ -61,7 +62,7 @@ def game_loop():
 
 def menu_loop():
     while True:
-        Game.clear_screen()
+        helpers.clear_screen()
         print(
             """ 
 +-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
@@ -78,57 +79,11 @@ def menu_loop():
             case "1":
                 game_loop()
             case "2":
-                print_stats()
+                s = Stats()
+                s.print_stats()
             case "3":
-                Game.clear_screen()
+                helpers.clear_screen()
                 sys.exit()
-
-
-def print_stats():
-    Game.clear_screen()
-    stats = Game.get_stats()
-    total_plays = stats["wins"] + stats["losses"]
-    win_percent = stats["wins"] / total_plays * 100
-    print(
-        f""" 
-+-+-+-+-+-+-+-+-+-+-+
-|S|t|a|t|i|s|t|i|c|s
-+-+-+-+-+-+-+-+-+-+-+
-
-Played: {total_plays}
-Win Percent: {win_percent:.1f}%
-Current Win Streak: {stats["streak"]}
-Longest Win Streak: {stats["max_streak"]}
-        """
-    )
-    print(
-        f""" 
-+-+-+-+-+-+-+-+-+-+-+-+-+
-|D|i|s|t|r|i|b|u|t|i|o|n
-+-+-+-+-+-+-+-+-+-+-+-+-+
-\nTotal Wins: {stats["wins"]}
-        """
-    )
-    dist = stats["distribution"]
-    for i in dist:
-        s = ""
-        percent = dist[i] / stats["wins"] * 100
-        for j in range(round(percent)):
-            if j % 10 == 0:
-                s += "🟩"
-        s += f" {dist[i]} ({percent:.1f}%)"
-        print(
-            f"{i} : {s}",
-        )
-    while True:
-        i = input("\nBack to menu (y/n)? ")
-        if i.lower() == "y":
-            break
-        elif i.lower() == "n":
-            Game.clear_screen()
-            sys.exit()
-        else:
-            print("Invalid input")
 
 
 def main():
