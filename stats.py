@@ -43,26 +43,20 @@ class Stats:
         
         total_plays = self.wins + self.losses
         win_percent = self.wins / total_plays * 100
-        print(
-            f""" 
-+-+-+-+-+-+-+-+-+-+-+
-|S|t|a|t|i|s|t|i|c|s
-+-+-+-+-+-+-+-+-+-+-+
-
-Played: {total_plays}
-Win Percent: {win_percent:.1f}%
-Current Win Streak: {self.streak}
-Longest Win Streak: {self.max_streak}
-            """
-        )
-        print(
-            f""" 
-+-+-+-+-+-+-+-+-+-+-+-+-+
-|D|i|s|t|r|i|b|u|t|i|o|n
-+-+-+-+-+-+-+-+-+-+-+-+-+
-\nTotal Wins: {self.wins}
-            """
-        )
+        
+        helpers.print_header("Statistics")
+        basic_stats = [
+            f"Played: {total_plays}", 
+            f"Wins: {self.wins}",
+            f"Win Percent: {win_percent:.1f}%", 
+            f"Current Win Streak: {self.streak}", 
+            f"Longest Win Streak: {self.max_streak}\n",
+        ]
+        for b in basic_stats:
+            print(b)
+        
+        helpers.print_header("Distribution")
+        
         dist = self.dist
         for i in dist:
             s = ""

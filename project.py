@@ -63,17 +63,11 @@ def game_loop():
 def menu_loop():
     while True:
         helpers.clear_screen()
-        print(
-            """ 
-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
-|O|p|e|n| |W|o|r|d|l|e| |v|1|.|0|
-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
-
-1 - New Puzzle
-2 - View Stats
-3 - Quit
-            """
-        )
+        helpers.print_header("Open Wordle v1.0")
+        options = ["1 - New Puzzle", "2 - View Stats", "3 - Quit"]
+        for o in options:
+            print(o)
+            
         i = input()
         match (i):
             case "1":

@@ -27,3 +27,24 @@ def read_txt(filename):
         for line in file:
             arr.append(line.strip().lower())
     return arr
+
+"""
+            +-+-+-+-+-+-+
+header ->   |H|e|a|d|e|r|
+            +-+-+-+-+-+-+
+"""
+def print_header(s: str):
+    words = s.split(" ")
+    output = ""
+    top, mid, bottom = "","",""
+    for word in words:
+        for l in word:
+            top += "+-"
+            mid += f"|{l}"
+            bottom += "+-"
+        top += "+ "
+        mid += "| "
+        bottom += "+ "
+    output += f"{top}\n{mid}\n{bottom}\n"
+    print(output)
+            
