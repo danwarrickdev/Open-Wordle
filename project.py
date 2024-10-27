@@ -17,7 +17,7 @@ def game_loop():
     while True:
 
         # Get guess
-        i = input("Guess: ").lower()
+        i = input("\nGuess: ").lower()
         if i == "quit":
             sys.exit()
 
@@ -60,7 +60,7 @@ def menu_loop():
         for o in options:
             print(o)
             
-        i = input()
+        i = input("\n")
         match (i):
             case "1":
                 game_loop()

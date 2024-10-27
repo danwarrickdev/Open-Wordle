@@ -42,7 +42,7 @@
         "is_used": false
     },
     "adobe": {
-        "is_used": false
+        "is_used": true
     },
     "adopt": {
         "is_used": false
@@ -417,7 +417,7 @@
         "is_used": false
     },
     "blush": {
-        "is_used": false
+        "is_used": true
     },
     "board": {
         "is_used": false
@@ -450,7 +450,7 @@
         "is_used": false
     },
     "bowls": {
-        "is_used": false
+        "is_used": true
     },
     "boxes": {
         "is_used": false
@@ -543,7 +543,7 @@
         "is_used": false
     },
     "cages": {
-        "is_used": false
+        "is_used": true
     },
     "caked": {
         "is_used": false
