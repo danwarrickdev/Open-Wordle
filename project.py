@@ -64,13 +64,13 @@ def menu_loop():
         Game.clear_screen()
         print(
             """ 
-            +-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
-            |O|p|e|n| |W|o|r|d|l|e| |v|1|.|0|
-            +-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
-            
-            1 - New Puzzle
-            2 - View Stats
-            3 - Quit
++-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
+|O|p|e|n| |W|o|r|d|l|e| |v|1|.|0|
++-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+
+
+1 - New Puzzle
+2 - View Stats
+3 - Quit
             """
         )
         i = input()
@@ -91,33 +91,34 @@ def print_stats():
     win_percent = stats["wins"] / total_plays * 100
     print(
         f""" 
-            +-+-+-+-+-+-+-+-+-+-+
-            |S|t|a|t|i|s|t|i|c|s
-            +-+-+-+-+-+-+-+-+-+-+
-        
-            Played: {total_plays}
-            Win Percent: {win_percent:.2f}%
-            Current Win Streak: {stats["streak"]}
-            Longest Win Streak: {stats["max_streak"]}
++-+-+-+-+-+-+-+-+-+-+
+|S|t|a|t|i|s|t|i|c|s
++-+-+-+-+-+-+-+-+-+-+
+
+Played: {total_plays}
+Win Percent: {win_percent:.1f}%
+Current Win Streak: {stats["streak"]}
+Longest Win Streak: {stats["max_streak"]}
         """
     )
     print(
         f""" 
-            +-+-+-+-+-+-+-+-+-+-+-+-+
-            |D|i|s|t|r|i|b|u|t|i|o|n
-            +-+-+-+-+-+-+-+-+-+-+-+-+
++-+-+-+-+-+-+-+-+-+-+-+-+
+|D|i|s|t|r|i|b|u|t|i|o|n
++-+-+-+-+-+-+-+-+-+-+-+-+
+\nTotal Wins: {stats["wins"]}
         """
     )
     dist = stats["distribution"]
     for i in dist:
         s = ""
-        percent = round(dist[i] / stats["wins"] * 100)
-        for j in range(percent):
+        percent = dist[i] / stats["wins"] * 100
+        for j in range(round(percent)):
             if j % 10 == 0:
                 s += "🟩"
-        s += f" {dist[i]} ({percent}%)"
+        s += f" {dist[i]} ({percent:.1f}%)"
         print(
-            f"""            {i} : {s}""",
+            f"{i} : {s}",
         )
     while True:
         i = input("\nBack to menu (y/n)? ")

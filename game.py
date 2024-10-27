@@ -147,7 +147,9 @@ class Game:
             return False
 
     def validate_is_word(self, guess):
-        return guess in self._all_words
+        g = guess.strip().lower()
+
+        return g in self._all_words
 
     def get_answer(self):
         with open("data/words.json") as file:
@@ -161,9 +163,9 @@ class Game:
 
     def get_all_possible_words(self):
         arr = []
-        with open("data/dictionary.txt", "r") as file:
+        with open("data/raw.txt", "r") as file:
             for line in file:
-                arr.append(line.strip())
+                arr.append(line.strip().lower())
         return arr
 
     def update_stats(self, win):
