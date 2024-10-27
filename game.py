@@ -160,7 +160,8 @@ class Game:
                     filtered.append(word)
             file.close()
         answer = random.choice(filtered)
-        new_words = {**d, [answer]: {"is_used": True}}
+        new_words = {**d}
+        new_words[answer] = {"is_used": True}
         
         with open("data/words.json", "w", encoding="utf-8") as file:
             json.dump(new_words, file, indent=4)
