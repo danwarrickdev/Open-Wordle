@@ -83,3 +83,23 @@ Longest Win Streak: {self.max_streak}
                 sys.exit()
             else:
                 print("Invalid input")
+
+    @classmethod
+    def update_stats(self, win, tries):
+        stats = self.get_stats(self)
+
+        if win:
+            stats["wins"] += 1
+            stats["streak"] += 1
+        else:
+            stats["losses"] += 1
+            stats["streak"] = 0
+
+        if stats["streak"] > stats["max_streak"]:
+            stats["max_streak"] += 1
+
+        distribution = stats["distribution"]
+        distribution[str(tries)] += 1
+        stats["distribution"] = distribution
+        
+        helpers.write_json("data/stats.json", stats)

@@ -2,8 +2,8 @@ import random
 from letter_box import LetterBox
 from colorama import Style, Fore
 import re
-import json
 import helpers
+from stats import Stats
 
 MAX_TRIES = 6
 WORD_LENGTH = 5
@@ -56,17 +56,20 @@ class Game:
     # returns should_exit
     def check_win_loss_continue(self):
         last_guess = self._guesses[-1]
+        tries = MAX_TRIES - self._tries + 1
+        
         if last_guess == self._answer:
             helpers.clear_screen()
             self.print_board()
             print("Success! :D")
-            print(f"You solved it in {MAX_TRIES - self._tries + 1} tries!")
-            self.update_stats(True)
+            print(f"You solved it in {tries} tries!")
+            Stats.update_stats(True, tries)
             return True
         elif self._tries == 1:
+            self.print_board()
             print("Fail :(")
             print(f"The answer was {self._answer}")
-            self.update_stats(False)
+            Stats.update_stats(False, tries)
             return True
         else:
             self.decrement_tries()
@@ -152,54 +155,22 @@ class Game:
         return g in self._all_words
 
     def get_answer(self):
-        with open("data/words.json") as file:
-            d = json.load(file)
-            filtered = []
-            for word in d:
-                if not d[word]["is_used"]:
-                    filtered.append(word)
-            file.close()
+        words = helpers.read_json("data/words.json")
+        
+        filtered = []
+        for word in words:
+            if not words[word]["is_used"]:
+                filtered.append(word)
+
         answer = random.choice(filtered)
-        new_words = {**d}
+        new_words = {**words}
         new_words[answer] = {"is_used": True}
         
-        with open("data/words.json", "w", encoding="utf-8") as file:
-            json.dump(new_words, file, indent=4)
-            file.close()
+        helpers.write_json("data/words.json", new_words)
+        
         return answer
 
     def get_all_possible_words(self):
-        arr = []
-        with open("data/raw.txt", "r") as file:
-            for line in file:
-                arr.append(line.strip().lower())
-        return arr
-
-    def update_stats(self, win):
-        with open("data/stats.json") as file:
-            d = json.load(file)
-            file.close()
-        stats = {**d}
-
-        if win:
-            stats["wins"] += 1
-            stats["streak"] += 1
-        else:
-            stats["losses"] += 1
-            stats["streak"] = 0
-
-        if stats["streak"] > stats["max_streak"]:
-            stats["max_streak"] += 1
-
-        distribution_idx = MAX_TRIES - self._tries + 1
-        distribution = d["distribution"]
-        distribution[str(distribution_idx)] += 1
-        stats["distribution"] = distribution
-
-        with open("data/stats.json", "w", encoding="utf-8") as file:
-            json.dump(stats, file, indent=4)
-            file.close()
-            
-
+        return helpers.read_txt("data/raw.txt")
         
     

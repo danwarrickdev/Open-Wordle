@@ -1,10 +1,10 @@
 {
-    "wins": 9,
+    "wins": 10,
     "losses": 2,
-    "streak": 1,
+    "streak": 2,
     "max_streak": 4,
     "distribution": {
-        "1": 1,
+        "1": 2,
         "2": 0,
         "3": 1,
         "4": 4,

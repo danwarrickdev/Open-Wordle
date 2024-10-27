@@ -159,7 +159,7 @@
         "is_used": false
     },
     "anger": {
-        "is_used": false
+        "is_used": true
     },
     "angry": {
         "is_used": false
@@ -324,7 +324,7 @@
         "is_used": false
     },
     "baths": {
-        "is_used": false
+        "is_used": true
     },
     "bawdy": {
         "is_used": false
