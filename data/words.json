@@ -2484,7 +2484,7 @@
         "is_used": false
     },
     "manga": {
-        "is_used": false
+        "is_used": true
     },
     "mania": {
         "is_used": false
