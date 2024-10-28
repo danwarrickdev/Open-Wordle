@@ -3624,7 +3624,7 @@
         "is_used": false
     },
     "slays": {
-        "is_used": false
+        "is_used": true
     },
     "slang": {
         "is_used": false

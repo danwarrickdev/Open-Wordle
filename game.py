@@ -168,7 +168,7 @@ class Game:
         answer = ""
         new_words = {}
         
-        if len(filtered > 0):
+        if len(filtered)>0:
             new_words = {**words}
         else:
             # user has gone through whole db; reset
