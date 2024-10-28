@@ -1,6 +1,6 @@
-import json
 import helpers
-import sys
+
+PATH_TO_STATS = "data/stats.json"
 
 class Stats:
     def __init__(self) -> None:
@@ -33,9 +33,7 @@ class Stats:
     
     
     def get_stats(self):
-        with open("data/stats.json") as file:
-            d = json.load(file)
-            return d
+        return helpers.read_json(PATH_TO_STATS)
         
         
     def print_stats(self):
@@ -88,4 +86,4 @@ class Stats:
         distribution[str(tries)] += 1
         stats["distribution"] = distribution
         
-        helpers.write_json("data/stats.json", stats)
+        helpers.write_json(PATH_TO_STATS, stats)

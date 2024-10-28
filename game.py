@@ -7,7 +7,8 @@ from stats import Stats
 
 MAX_TRIES = 6
 WORD_LENGTH = 5
-
+PATH_TO_WORD_BANK = "data/words.json"
+PATH_TO_RAW_WORD_LIST = "data/raw.txt"
 
 class Game:
     def __init__(self) -> None:
@@ -155,7 +156,7 @@ class Game:
         return g in self._all_words
 
     def get_answer(self):
-        words = helpers.read_json("data/words.json")
+        words = helpers.read_json(PATH_TO_WORD_BANK)
         
         filtered = []
         
@@ -179,12 +180,12 @@ class Game:
         answer = random.choice(filtered)
         new_words[answer] = {"is_used": True}
 
-        helpers.write_json("data/words.json", new_words)
+        helpers.write_json(PATH_TO_WORD_BANK, new_words)
         
         return answer
 
     def get_all_possible_words(self):
-        return helpers.read_txt("data/raw.txt")
+        return helpers.read_txt(PATH_TO_RAW_WORD_LIST)
 
         
     
