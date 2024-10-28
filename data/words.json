@@ -393,7 +393,7 @@
         "is_used": false
     },
     "blind": {
-        "is_used": false
+        "is_used": true
     },
     "bloat": {
         "is_used": false
@@ -1278,7 +1278,7 @@
         "is_used": false
     },
     "faker": {
-        "is_used": false
+        "is_used": true
     },
     "fakes": {
         "is_used": false
@@ -1302,7 +1302,7 @@
         "is_used": false
     },
     "fated": {
-        "is_used": false
+        "is_used": true
     },
     "fault": {
         "is_used": false
@@ -1824,7 +1824,7 @@
         "is_used": false
     },
     "habit": {
-        "is_used": false
+        "is_used": true
     },
     "haiku": {
         "is_used": false
@@ -2436,7 +2436,7 @@
         "is_used": false
     },
     "lowly": {
-        "is_used": false
+        "is_used": true
     },
     "lucid": {
         "is_used": false
@@ -2916,7 +2916,7 @@
         "is_used": false
     },
     "plans": {
-        "is_used": false
+        "is_used": true
     },
     "plant": {
         "is_used": false
@@ -3468,7 +3468,7 @@
         "is_used": false
     },
     "shaky": {
-        "is_used": false
+        "is_used": true
     },
     "shale": {
         "is_used": false

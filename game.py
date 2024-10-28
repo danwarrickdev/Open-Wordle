@@ -158,19 +158,33 @@ class Game:
         words = helpers.read_json("data/words.json")
         
         filtered = []
+        
+        # Get list of words that haven't been answers yet
         for word in words:
             if not words[word]["is_used"]:
                 filtered.append(word)
-
-        answer = random.choice(filtered)
-        new_words = {**words}
-        new_words[answer] = {"is_used": True}
         
+        answer = ""
+        new_words = {}
+        
+        if len(filtered > 0):
+            new_words = {**words}
+        else:
+            # user has gone through whole db; reset
+            new_words = {**words}
+            for word in words:
+                new_words[word] = {{"is_used": False}}
+                filtered.append(word)
+                
+        answer = random.choice(filtered)
+        new_words[answer] = {"is_used": True}
+
         helpers.write_json("data/words.json", new_words)
         
         return answer
 
     def get_all_possible_words(self):
         return helpers.read_txt("data/raw.txt")
+
         
     
