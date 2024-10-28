@@ -528,7 +528,7 @@
         "is_used": false
     },
     "cabin": {
-        "is_used": false
+        "is_used": true
     },
     "caddy": {
         "is_used": false
