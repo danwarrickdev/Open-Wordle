@@ -38,6 +38,7 @@ class LetterBox:
         return color
 
     # get all indexes of a char in a string
+    @classmethod
     def find_all(self, s, char):
         indexes = []
         index = -1
