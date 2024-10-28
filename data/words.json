@@ -285,7 +285,7 @@
         "is_used": false
     },
     "badge": {
-        "is_used": false
+        "is_used": true
     },
     "bagel": {
         "is_used": false

@@ -2,6 +2,7 @@ import sys
 from game import Game
 import helpers
 from stats import Stats
+from letter_box import LetterBox
 
 def game_loop():
     g = Game()
@@ -72,6 +73,17 @@ def menu_loop():
                 sys.exit()
 
 
+def get_letterbox_str(index, value, color):
+    l = LetterBox(index,value)
+    return l.__str__(color)
+
+def get_letterbox_color(index, value, guess, answer):
+    l = LetterBox(index, value)
+    return l.get_color(guess, answer)
+
+def find_all_chars_in_str(s, char):
+    return LetterBox.find_all(s, char)
+    
 def main():
     menu_loop()
 
