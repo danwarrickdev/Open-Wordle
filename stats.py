@@ -4,23 +4,23 @@ PATH_TO_STATS = "data/stats.json"
 
 class Stats:
     def __init__(self) -> None:
-        stats = self.get_stats()
-        self._wins = stats["wins"]
-        self._losses = stats["losses"]
-        self._streak = stats["streak"]
-        self._max_streak = stats["max_streak"]
-        self._dist = stats["distribution"]
+        stats: dict = self.get_stats()
+        self._wins: int = stats["wins"]
+        self._losses: int = stats["losses"]
+        self._streak: int = stats["streak"]
+        self._max_streak: int = stats["max_streak"]
+        self._dist: dict = stats["distribution"]
     
     @property
-    def wins(self)->int:
+    def wins(self) -> int:
         return self._wins
 
     @property
-    def losses(self)->int:
+    def losses(self) -> int:
         return self._losses
 
     @property
-    def streak(self):
+    def streak(self) -> int:
         return self._streak
 
     @property
@@ -28,15 +28,11 @@ class Stats:
         return self._max_streak
     
     @property
-    def dist(self):
+    def dist(self) -> dict:
         return self._dist
-    
-    
-    def get_stats(self):
-        return helpers.read_json(PATH_TO_STATS)
         
         
-    def print_stats(self):
+    def print_stats(self) -> None:
         helpers.clear_screen()
         
         total_plays = self.wins + self.losses
@@ -69,8 +65,12 @@ class Stats:
         helpers.back_to_menu_loop()
 
     @classmethod
-    def update_stats(self, win, tries):
-        stats = self.get_stats(self)
+    def get_stats(cls) -> dict:
+        return helpers.read_json(PATH_TO_STATS)
+    
+    @classmethod
+    def update_stats(cls, win: int, tries: int) -> None:
+        stats = cls.get_stats()
 
         if win:
             stats["wins"] += 1

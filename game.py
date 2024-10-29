@@ -13,49 +13,49 @@ PATH_TO_RAW_WORD_LIST = "data/raw.txt"
 class Game:
     def __init__(self) -> None:
         # number of times to execute game loop
-        self._tries = MAX_TRIES
+        self._tries: int = MAX_TRIES
         
         # past guesses for display purposes
-        self._guesses = []
+        self._guesses: list[str] = []
         
         # the word the user is trying to guess
-        self._answer = self.get_answer()
+        self._answer: str = self.get_answer()
         
         # a list of 400k words to validate guesses are actual words
-        self._all_words = self.get_all_possible_words()
+        self._all_words: list[str] = self.get_all_possible_words()
 
         alphabet = "abcdefghijklmnopqrstuvwxyz"
         
         # used to display letters guessed
-        self._letter_bank = {
+        self._letter_bank: dict = {
             letter: {"is_guessed": False, "is_correct": False, "is_hint": False}
             for letter in alphabet
         }
 
     @property
-    def tries(self):
+    def tries(self) -> int:
         return self._tries
 
     @property
-    def guesses(self):
+    def guesses(self) -> list[str]:
         return self._guesses
 
     @property
-    def answer(self):
+    def answer(self) -> str:
         return self._answer
 
     @property
-    def letter_bank(self):
+    def letter_bank(self) -> dict:
         return self._letter_bank
 
-    def decrement_tries(self):
+    def decrement_tries(self) -> None:
         self._tries -= 1
 
-    def guess(self, g):
+    def guess(self, g: str) -> None:
         self._guesses.append(g)
 
     # returns should_exit
-    def check_win_loss_continue(self):
+    def check_win_loss_continue(self) -> bool:
         last_guess = self._guesses[-1]
         tries = MAX_TRIES - self._tries + 1
         
@@ -78,7 +78,7 @@ class Game:
             return False
 
 
-    def print_row(self, guess=""):
+    def print_row(self, guess="") -> None:
         output = ["" for _ in range(3)]
         if guess and self._answer:
             # get guess string as list of LetterBox
@@ -87,7 +87,7 @@ class Game:
             for b in letter_boxes:
                 # Get output in correct color
                 color = b.get_color(guess, self._answer)
-                box = b.__str__(color)
+                box = b.get(color)
 
                 for i in range(3):
                     output[i] += box[i]
@@ -95,17 +95,17 @@ class Game:
             # handle empty row
             for _ in range(WORD_LENGTH):
                 b = LetterBox(-1, "?")
-                box = b.__str__("white")
+                box = b.get("white")
 
                 for i in range(3):
                     output[i] += box[i]
 
         # print output
-        for i in output:
-            print(i)
+        for j in output:
+            print(j)
         print()
 
-    def print_board(self):
+    def print_board(self) -> None:
         # Update board
         for num in range(MAX_TRIES):
             if num < len(self._guesses):
@@ -113,7 +113,7 @@ class Game:
             else:
                 self.print_row()
 
-    def update_letter_bank(self):
+    def update_letter_bank(self) -> None:
         last_guess = self._guesses[-1]
         index = 0
         for l in last_guess:
@@ -124,7 +124,7 @@ class Game:
                     self._letter_bank[l]["is_correct"] = True
             index += 1
 
-    def print_letter_bank(self):
+    def print_letter_bank(self) -> None:
         index = 0
         for i in self._letter_bank:
             if self._letter_bank[i]["is_correct"]:
@@ -140,7 +140,7 @@ class Game:
             index += 1
         print()
 
-    def validate_guess(self, guess):
+    def validate_guess(self, guess: str) -> bool:
         g = guess.strip().lower()
         try:
             if re.search(r"^[a-zA-Z]{5}", g):
@@ -150,12 +150,12 @@ class Game:
         except ValueError:
             return False
 
-    def validate_is_word(self, guess):
+    def validate_is_word(self, guess: str) -> bool:
         g = guess.strip().lower()
 
         return g in self._all_words
 
-    def get_answer(self):
+    def get_answer(self) -> str:
         words = helpers.read_json(PATH_TO_WORD_BANK)
         
         filtered = []
@@ -184,7 +184,7 @@ class Game:
         
         return answer
 
-    def get_all_possible_words(self):
+    def get_all_possible_words(self) -> list[str]:
         return helpers.read_txt(PATH_TO_RAW_WORD_LIST)
 
         

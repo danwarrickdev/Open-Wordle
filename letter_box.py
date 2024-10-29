@@ -1,10 +1,10 @@
 class LetterBox:
     # index, value, is_guessed, print
     def __init__(self, index, value) -> None:
-        self._index = index
-        self._value = value
+        self._index: int = index
+        self._value: str = value
 
-    def __str__(self, color="white"):
+    def get(self, color="white") -> list[str]:
         if color == "green":
             return ["🟩🟩🟩 ", f"🟩{self._value.capitalize()} 🟩 ", "🟩🟩🟩 "]
         elif color == "yellow":
@@ -12,7 +12,7 @@ class LetterBox:
         else:
             return ["⬜⬜⬜ ", f"⬜{self._value.capitalize()} ⬜ ", "⬜⬜⬜ "]
 
-    def get_color(self, guess, answer):
+    def get_color(self, guess: str, answer: str) -> str:
         color = "white"
             
         # does letter exist in answer
@@ -39,7 +39,7 @@ class LetterBox:
 
     # get all indexes of a char in a string
     @classmethod
-    def find_all(self, s, char):
+    def find_all(cls, s: str, char: str) -> list[int]:
         indexes = []
         index = -1
         while True:

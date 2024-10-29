@@ -4,7 +4,7 @@ import helpers
 from stats import Stats
 from letter_box import LetterBox
 
-def game_loop():
+def game_loop() -> None:
     g = Game()
     helpers.clear_screen()
 
@@ -52,8 +52,8 @@ def game_loop():
 
     helpers.back_to_menu_loop()
 
-
-def menu_loop():
+# Main Menu - Get user input and route to either game/stats/quit
+def menu_loop() -> None:
     while True:
         helpers.clear_screen()
         helpers.print_header("Open Wordle v1.0")
@@ -73,18 +73,18 @@ def menu_loop():
                 sys.exit()
 
 
-def get_letterbox_str(index, value, color):
+def get_letterbox_str(index: int, value: str, color: str) -> list[str]:
     l = LetterBox(index,value)
-    return l.__str__(color)
+    return l.get(color)
 
-def get_letterbox_color(index, value, guess, answer):
+def get_letterbox_color(index: int, value: str, guess: str, answer: str) -> str:
     l = LetterBox(index, value)
     return l.get_color(guess, answer)
 
-def find_all_chars_in_str(s, char):
+def find_all_chars_in_str(s: str, char: str) -> list[int]:
     return LetterBox.find_all(s, char)
     
-def main():
+def main() -> None:
     menu_loop()
 
 
