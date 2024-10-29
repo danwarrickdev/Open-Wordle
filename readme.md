@@ -2,6 +2,8 @@
 
 #### Video Demo:
 
+https://youtu.be/bGnoGbZcbKM
+
 #### Description:
 
 This project is a recreation of the game "Wordle", currently owned by the New York Times.  It can be run ad-free in your terminal with Python 3 and includes 1500+ puzzles without the 1-puzzle-per-day limit.  Open Wordle also supports functionality for displaying your play statistics (wins, losses, distribution, etc.) and will save these stats locally.
