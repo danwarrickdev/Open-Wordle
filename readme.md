@@ -124,7 +124,7 @@ String value of the character in the answer
 
 ***Functions***
 
-`LetterBox.__str__(c ?: str) -> str[]`
+`LetterBox.get(c ?: str) -> str[]`
 
 Returns a string array with 3 elements, to be used to display the letter box on the board
 
